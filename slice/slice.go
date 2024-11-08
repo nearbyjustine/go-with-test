@@ -1,23 +1,28 @@
 package slice
 
-import (
-	"fmt"
-)
+import "fmt"
 
 type Human struct {
-	name   string
-	isCute bool
-	age    int
+	Name   string
+	IsCute bool
+	Age    int
+} 
+
+func (h Human) PrintDescription() string {
+	if h.IsCute {
+		return fmt.Sprintf("%v is cute!! 🥹", h.Name)
+	}
+	return fmt.Sprintf("%v ain't that cute 😾", h.Name)
 }
 
-func PrintSlice() {
+func GetPeople() []Human {
 	var people = []Human{
 		{
-			name:   "Ae",
-			isCute: true,
-			age:    0,
+			Name:   "Ae",
+			IsCute: true,
+			Age:    0,
 		},
 	}
 
-	fmt.Println(people)
+	return people
 }
